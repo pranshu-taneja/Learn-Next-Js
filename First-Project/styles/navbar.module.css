@@ -1,0 +1,29 @@
+.container {
+  width: 100vw;
+  height: 5rem;
+  display: hide;
+  position: fixed;
+  top: 2rem;
+}
+
+.navbar {
+  /* width: 90vw;     this width control ruins everything just mentioning so that keep it commented */
+  height: inherit;
+  list-style: none;
+  display: flex;
+  position: absolute;
+  font-size: 2rem;
+  left: 2rem;
+  right: 2rem;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: brown;
+  border-radius: 5rem;
+
+  /* Adding Glassmorphobic here */
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
