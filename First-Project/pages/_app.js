@@ -4,7 +4,7 @@
 //directly add fonts to the app from google just by name
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import "@/styles/globals.css"; //be careful about the naming globals.css is the one to go on the file name as well in folder structer too
+import styles from "@/styles/globals.css"; //be careful about the naming globals.css is the one to go on the file name as well in folder structer too
 
 //by this the these fonts will become default in your page
 const inter = Poppins({
@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       {/* This is the container for our webpabe and there is this classname which specifies the font as global all inside */}
-      <main className={inter.className}>      
+      <main className={inter.className}>
         <Navbar />
         <Component {...pageProps} />
       </main>
