@@ -1,0 +1,29 @@
+.postsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    padding: 3rem;
+}
+
+.post{
+    background-color: white;
+    padding: 1rem;
+    border: 3px solid black;
+    margin: 1rem;
+    border-radius: 2rem;
+}
+
+.bodyText{
+    cursor: pointer;
+}
+
+.bodyText:hover{
+    color: rgb(51, 98, 128);
+}
+
+.titleText:hover{
+    color: rgba(220, 20, 60, 0.597);
+    cursor: pointer;
+}

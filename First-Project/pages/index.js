@@ -5,8 +5,10 @@ import Head from "next/head";
 
 // importing style sheet from styles here
 import styles from "@/styles/index.module.css"; 
+import Post from "@/components/Post";
 
-export default function Home() {
+export default function Home({posts}) {
+  
   return (
     <>
       <Head>
@@ -19,8 +21,20 @@ export default function Home() {
       {/* This is how you apply style in the element styles._name_ */}
       <main className={styles.main}>
         <h1>My First Next App</h1>
-        
+        <Post posts={posts}/>
       </main>
     </>
   );
+}
+
+// Get static props is used to fetch data from the server at the build time
+export const getStaticProps = async()=>{        
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`);
+  const posts = await res.json();
+  
+  return{
+    props:{
+      posts
+    }
+  }
 }

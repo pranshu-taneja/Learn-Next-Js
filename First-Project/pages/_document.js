@@ -4,7 +4,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 export default function Document() {
   return (
     // Here changing for change in meta description for SEO 
-    <Html lang="ru">      
+    <Html lang="en">      
       <Head />
       <body>
         <Main />
