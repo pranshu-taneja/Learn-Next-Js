@@ -33,3 +33,24 @@ img {
   display: block;
 }
 
+
+/* ------------------------------------ Scrollbar Styling ---------------------------------- */
+/* Style for all scrollbars */
+::-webkit-scrollbar {
+  width: 4px; /* Change this to adjust scrollbar width */
+}
+
+/* Style for scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the track background to transparent */
+}
+
+/* Style for scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(59 57 56 / 52%); /* Set the thumb background to a semi-transparent color */
+  border-radius: 10px; /* Give the thumb a rounded shape */
+}
+/* ------------------------------------ Scrollbar Styling ---------------------------------- */
+
+
+
