@@ -1,24 +1,22 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+import styles from "../../../styles/dindex.module.css";
 
-export default function index({ data }) {
+export default function Dindex({ data }) {     //You will see this function fetching data from the homepage(while redirecting) and by the dynamic routes when refreshed page which can give you data of all api routes dynamically
   const router = useRouter();
-  const { id } = router.query;      // A simple way to get the id in the url
-  console.log(data);
+  const { id } = router.query; // A simple way to get the id in the url
+  // console.log(data);
 
   return (
-    <div className="post">
-      <p>This is the navigating page {id}</p>
-      <h1>{data.title}</h1>
-      <h3>{data.body}</h3>
-      <Link href="/">Go Back</Link>
-      <style jsx>
-        {`
-          .post {
-            padding: 10rem;
-          }
-        `}
-      </style>
+    <div className={styles.main}>
+      <div className={styles.post}>
+        <p>This is the navigating page {id}</p>
+        <h1>{data.title}</h1>
+        <h3>{data.body}</h3>
+        <Link className={styles.gBack} href="/">
+          Go Back
+        </Link>
+      </div>
     </div>
   );
 }
@@ -36,33 +34,36 @@ export default function index({ data }) {
 //   };
 // };
 
-
 //👇THese might not reflect as visual changes as these are related to performance rather than the data that is being rendered on the page
 // Now you can use it to get all the data rather tahn the links provided on the page.
 // Be careful while experimenting with the code below cuz it might also happen sometimes that the data might get served from the pages who redirected you to this one page (Maybe i built this functionality in those page accidently). You will recognize this on refreshing this dynamic page after being redirected.(break the code of gsp for this) --> (Although its working fine right now)
 
-export const getStaticProps = async (ctx) => {                  // This will get the data on buildtime and will save it.
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${ctx.params.id}`);
+export const getStaticProps = async (ctx) => {
+  // This will get the data on buildtime and will save it.
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${ctx.params.id}`
+  );
   const data = await res.json();
 
   return {
-    props:{
-      data
-    }
-  }
-}
+    props: {
+      data,
+    },
+  };
+};
 
-export const getStaticPaths = async () => {             // This is the method to get the paths of the pages that we want to generate dynamically but only on buildtime
+export const getStaticPaths = async () => {
+  // This is the method to get the paths of the pages that we want to generate dynamically but only on buildtime
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
   const data = await res.json();
-  const id = data.map((data)=>data.id);
-  const paths = id.map((id)=>({params:{id:id.toString()}}));
+  const id = data.map((data) => data.id);
+  const paths = id.map((id) => ({ params: { id: id.toString() } }));
 
   return {
     paths,
-    fallback:false
-  }
-}
+    fallback: false,
+  };
+};
 
 //Important thing to know about get static path and get static props working (ofc they work together)
 // 1. getStaticPaths is used to get the paths of the pages that we want to generate dynamically

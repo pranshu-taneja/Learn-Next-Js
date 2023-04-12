@@ -1,0 +1,31 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+  
+    /* Background */
+    background-color: #ffb499;
+    background-image: radial-gradient(
+        at 98% 51%,
+        hsla(182, 94%, 78%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 91% 27%, hsla(338, 65%, 76%, 1) 0px, transparent 50%),
+      radial-gradient(at 84% 56%, hsla(58, 94%, 71%, 1) 0px, transparent 50%),
+      radial-gradient(at 40% 26%, hsla(296, 68%, 75%, 1) 0px, transparent 50%),
+      radial-gradient(at 70% 34%, hsla(172, 72%, 66%, 1) 0px, transparent 50%),
+      radial-gradient(at 23% 31%, hsla(7, 76%, 75%, 1) 0px, transparent 50%),
+      radial-gradient(at 42% 9%, hsla(207, 80%, 63%, 1) 0px, transparent 50%);
+  }
+
+  .post{
+    padding: 2rem;
+  }
+
+  .gBack{
+    font-weight: bold;
+    font-size: 1.3rem;
+  }

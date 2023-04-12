@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@/styles/about.module.css";
 import Post from "@/components/Post";
 
-export default function about({posts}) {
+export default function About({posts}) {
   const val = 4;
   return (
     //One of the best usecase of css containerization. See Css file `about.module.css` for more details
