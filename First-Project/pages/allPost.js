@@ -1,10 +1,14 @@
-import React from 'react'
-import styles from '../styles/allPost.module.css'
+import React from "react";
+import styles from "../styles/allPost.module.css";
+import Meta from "@/components/Meta";
 
 function allPost() {
   return (
-    <div className={styles.main} ></div>
-  )
+    <>
+      <Meta title='AllPost' />
+      <div className={styles.main}></div>
+    </>
+  );
 }
 
-export default allPost
+export default allPost;
