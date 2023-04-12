@@ -1,4 +1,5 @@
 # Learnings from My Next Js Practices. 📚 📝
+## *Go Through the whole Project for better Practical understanding*
 
 - Best practice for naming convention is
   - Components name goes with first capital letter
