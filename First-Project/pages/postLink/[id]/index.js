@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../../../styles/dindex.module.css";
 import Meta from "@/components/Meta";
 
-const URL = process.env.URL;
+const URL = process.env.NEXT_PUBLIC_VERCEL_URL;
 
 export default function Dindex({ data }) {
   //You will see this function fetching data from the homepage(while redirecting) and by the dynamic routes when refreshed page which can give you data of all api routes dynamically
