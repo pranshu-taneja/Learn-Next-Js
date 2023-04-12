@@ -20,9 +20,19 @@ export default function Home({posts}) {
 
       {/* This is how you apply style in the element styles._name_ */}
       <main className={styles.main}>
-        <h1>My First Next App</h1>
+        <h1>Rendered Data through <span className="cText">GetStaticProps</span></h1>
         <Post posts={posts}/>
       </main>
+
+      <style jsx>
+        {
+          `
+            .cText{
+              color: darkRed;
+            }
+          `
+        }
+      </style>
     </>
   );
 }
@@ -38,3 +48,4 @@ export const getStaticProps = async()=>{
     }
   }
 }
+

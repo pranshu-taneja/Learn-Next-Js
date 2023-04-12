@@ -1,13 +1,9 @@
-.headtext {
-    top: 40vh;
-}
-
-.main{
+.main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10rem 5rem;
+    padding: 6rem;
     min-height: 100vh;
   
     /* Background */
@@ -23,5 +19,4 @@
       radial-gradient(at 70% 34%, hsla(172, 72%, 66%, 1) 0px, transparent 50%),
       radial-gradient(at 23% 31%, hsla(7, 76%, 75%, 1) 0px, transparent 50%),
       radial-gradient(at 42% 9%, hsla(207, 80%, 63%, 1) 0px, transparent 50%);
-}
-
+  }

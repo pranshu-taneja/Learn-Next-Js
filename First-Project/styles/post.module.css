@@ -23,7 +23,15 @@
     color: rgb(51, 98, 128);
 }
 
+
+.titleText{
+    color: black;
+}
 .titleText:hover{
     color: rgba(220, 20, 60, 0.597);
     cursor: pointer;
+}
+
+.Link:hover{
+    text-decoration: none;
 }

@@ -18,6 +18,11 @@ function Navbar() {
             About
           </Link>
         </ul>
+        <ul>
+          <Link className={styles.navtext} href="/allPost">
+            AllPost
+          </Link>
+        </ul>
       </li>
     </div>
   );
