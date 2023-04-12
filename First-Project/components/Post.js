@@ -12,7 +12,7 @@ export default function Post({ posts }) {
           </Link>
         </div>
       ))}
-      {console.log(posts[0])}
+      {/* {console.log(posts[0])} */}
     </div>
   );
 }

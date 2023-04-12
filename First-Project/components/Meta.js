@@ -6,7 +6,7 @@ const Meta = ({title, description, keywords}) => {
   return (
     // You Can check or read them out from page source (ctrl+U)
      <Head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <title>{title}</title>
         <meta name="keywords" content={keywords} />
         <meta name="description" content={description} />
