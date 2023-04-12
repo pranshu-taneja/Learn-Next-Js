@@ -32,6 +32,7 @@ export default function About({ posts }) {
   );
 }
 
+// Remember You can't use next Export on build while using this gssp (btw its used to fetch data on each requested (not on build) )
 export const getServerSideProps = async () => {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts?_limit=6`

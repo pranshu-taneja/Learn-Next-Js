@@ -30,31 +30,11 @@ export default function Dindex({ data }) {
   );
 }
 
-//------------------- Getting local Data from API (data.js) -------------------
-export const getServerSideProps = async (context) => {
-  //This is the method to get the data from the server on runtime not on buildtime
-  const res = await fetch(`${URL}/api/articles/${context.params.id}`);
-  const data = await res.json();
-
-  return {
-    props: {
-      data,
-    },
-  };
-};
-//------------------- Getting local Data from API (data.js) -------------------
-
-//👇THese might not reflect as visual changes as these are related to performance rather than the data that is being rendered on the page
-// Now you can use it to get all the data rather tahn the links provided on the page.
-// Be careful while experimenting with the code below cuz it might also happen sometimes that the data might get served from the pages who redirected you to this one page (Maybe i built this functionality in those page accidently). You will recognize this on refreshing this dynamic page after being redirected.(break the code of gsp for this) --> (Although its working fine right now)
-
-//------------------- Getting Data from Remote API But storing it static while build process  -------------------
-// export const getStaticProps = async (ctx) => {
-//   // This will get the data on buildtime and will save it.
-//   const res = await fetch(
-//     `https://jsonplaceholder.typicode.com/posts/${ctx.params.id}`
-//     );
-//     const data = await res.json();
+//------------------- Getting local Data from API (data.js) -------------------   uncomment it for better understanding and comment the gspa and gspr 
+// export const getServerSideProps = async (context) => {
+//   //This is the method to get the data from the server on runtime not on buildtime
+//   const res = await fetch(`${URL}/api/articles/${context.params.id}`);
+//   const data = await res.json();
 
 //   return {
 //     props: {
@@ -62,19 +42,39 @@ export const getServerSideProps = async (context) => {
 //     },
 //   };
 // };
+//------------------- Getting local Data from API (data.js) -------------------
 
-// export const getStaticPaths = async () => {
-//   // This is the method to get the paths of the pages that we want to generate dynamically but only on buildtime
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-//   const data = await res.json();
-//   const id = data.map((data) => data.id);
-//   const paths = id.map((id) => ({ params: { id: id.toString() } }));
+//👇THese might not reflect as visual changes as these are related to performance rather than the data that is being rendered on the page
+// Now you can use it to get all the data rather tahn the links provided on the page.
+// Be careful while experimenting with the code below cuz it might also happen sometimes that the data might get served from the pages who redirected you to this one page (Maybe i built this functionality in those page accidently). You will recognize this on refreshing this dynamic page after being redirected.(break the code of gsp for this) --> (Although its working fine right now)
 
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
+//------------------- Getting Data from Remote API But storing it static while build process  -------------------
+export const getStaticProps = async (ctx) => {
+  // This will get the data on buildtime and will save it.
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${ctx.params.id}`
+    );
+    const data = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+export const getStaticPaths = async () => {
+  // This is the method to get the paths of the pages that we want to generate dynamically but only on buildtime
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const data = await res.json();
+  const id = data.map((data) => data.id);
+  const paths = id.map((id) => ({ params: { id: id.toString() } }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
 //------------------- Getting Data from Remote API But storing it static while build process  -------------------
 
 //Important thing to know about get static path and get static props working (ofc they work together)
